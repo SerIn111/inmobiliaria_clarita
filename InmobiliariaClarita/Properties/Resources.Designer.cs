@@ -59,5 +59,15 @@ namespace InmobiliariaClarita.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Imagen_Inmobiliaria_Clarita_Sin_Fondo {
+            get {
+                object obj = ResourceManager.GetObject("Imagen Inmobiliaria Clarita Sin Fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

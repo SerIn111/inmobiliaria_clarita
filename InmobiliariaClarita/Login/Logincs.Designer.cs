@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logincs));
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -36,6 +37,9 @@
             txtUsuario = new TextBox();
             txtContra = new TextBox();
             btnAceptar = new Button();
+            tpUsuario = new ToolTip(components);
+            tpContraseña = new ToolTip(components);
+            tpAceptar = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +55,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.Imagen_Inmobiliaria_Clarita_Sin_Fondo;
             pictureBox1.Location = new Point(51, 112);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(194, 214);
@@ -137,5 +141,8 @@
         private TextBox txtUsuario;
         private TextBox txtContra;
         private Button btnAceptar;
+        private ToolTip tpUsuario;
+        private ToolTip tpContraseña;
+        private ToolTip tpAceptar;
     }
 }
