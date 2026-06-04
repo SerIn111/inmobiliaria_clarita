@@ -23,5 +23,17 @@ namespace InmobiliariaClarita.Menu_Principal
         {
 
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            Logincs login = new Logincs();
+            login.Show();
+            this.Dispose();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

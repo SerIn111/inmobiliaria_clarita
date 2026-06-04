@@ -38,8 +38,13 @@
             txtContra = new TextBox();
             btnAceptar = new Button();
             tpUsuario = new ToolTip(components);
-            tpContraseña = new ToolTip(components);
+            tpContra = new ToolTip(components);
             tpAceptar = new ToolTip(components);
+            label4 = new Label();
+            label5 = new Label();
+            btnSalir = new Button();
+            tpSalir = new ToolTip(components);
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +52,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(292, 46);
+            label1.Location = new Point(364, 104);
             label1.Name = "label1";
             label1.Size = new Size(253, 39);
             label1.TabIndex = 0;
@@ -56,9 +61,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Imagen_Inmobiliaria_Clarita_Sin_Fondo;
-            pictureBox1.Location = new Point(51, 112);
+            pictureBox1.Location = new Point(93, 164);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(194, 214);
+            pictureBox1.Size = new Size(218, 193);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -67,7 +72,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(292, 112);
+            label2.Location = new Point(364, 164);
             label2.Name = "label2";
             label2.Size = new Size(96, 29);
             label2.TabIndex = 2;
@@ -77,7 +82,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(301, 221);
+            label3.Location = new Point(375, 262);
             label3.Name = "label3";
             label3.Size = new Size(136, 29);
             label3.TabIndex = 3;
@@ -86,36 +91,86 @@
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(301, 144);
+            txtUsuario.Location = new Point(375, 193);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(244, 30);
+            txtUsuario.Size = new Size(274, 30);
             txtUsuario.TabIndex = 1;
             // 
             // txtContra
             // 
             txtContra.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContra.Location = new Point(301, 253);
+            txtContra.Location = new Point(375, 291);
             txtContra.Name = "txtContra";
-            txtContra.Size = new Size(244, 30);
+            txtContra.PasswordChar = '*';
+            txtContra.Size = new Size(274, 30);
             txtContra.TabIndex = 2;
             // 
             // btnAceptar
             // 
             btnAceptar.BackColor = Color.White;
+            btnAceptar.FlatAppearance.MouseDownBackColor = Color.Lime;
+            btnAceptar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
+            btnAceptar.FlatStyle = FlatStyle.Flat;
             btnAceptar.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAceptar.Location = new Point(316, 316);
+            btnAceptar.Location = new Point(392, 347);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(218, 58);
+            btnAceptar.Size = new Size(245, 52);
             btnAceptar.TabIndex = 3;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += btnAceptar_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(190, 8);
+            label4.Name = "label4";
+            label4.Size = new Size(408, 54);
+            label4.TabIndex = 4;
+            label4.Text = "Inmobiliaria Clarita";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(109, 62);
+            label5.Name = "label5";
+            label5.Size = new Size(528, 29);
+            label5.TabIndex = 5;
+            label5.Text = "Sistema de Gestión de Alquiler y Reservaciones";
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackgroundImage = Properties.Resources.atras1;
+            btnSalir.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSalir.FlatAppearance.MouseDownBackColor = Color.Red;
+            btnSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Location = new Point(3, 400);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(126, 54);
+            btnSalir.TabIndex = 101;
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Location = new Point(340, 94);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(331, 351);
+            panel1.TabIndex = 102;
             // 
             // Logincs
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(793, 457);
+            Controls.Add(btnSalir);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(btnAceptar);
             Controls.Add(txtContra);
             Controls.Add(txtUsuario);
@@ -123,6 +178,7 @@
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Logincs";
             Text = "Login";
@@ -142,7 +198,12 @@
         private TextBox txtContra;
         private Button btnAceptar;
         private ToolTip tpUsuario;
-        private ToolTip tpContraseña;
+        private ToolTip tpContra;
         private ToolTip tpAceptar;
+        private Label label4;
+        private Label label5;
+        private Button btnSalir;
+        private ToolTip tpSalir;
+        private Panel panel1;
     }
 }

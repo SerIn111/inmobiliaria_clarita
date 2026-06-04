@@ -33,12 +33,14 @@
             // 
             // Plantilla
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(900, 405);
+            Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Plantilla";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Plantilla";
             Load += Plantilla_Load;
             ResumeLayout(false);
