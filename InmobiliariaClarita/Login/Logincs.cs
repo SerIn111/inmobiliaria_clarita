@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using InmobiliariaClarita.Menu_Principal;
 using InmobiliariaClarita.Plantillas;
-using InmobiliariaClarita.Menu_Principal;
-using Microsoft.VisualBasic;
 
 namespace InmobiliariaClarita.Login
 {
@@ -38,15 +28,30 @@ namespace InmobiliariaClarita.Login
         {
             try
             {
-                if (txtUsuario.Text.Equals(String.Empty) || txtContra.Text.Equals(String.Empty))
+                if (txtUsuario.Text == String.Empty || txtContra.Text == String.Empty)
                 {
-                    MessageBox.Show("Los campos no deben de estar vacios");
+                    MessageBox.Show(
+                        "Los campos no deben de estar vacios",
+                        "Campos vacios", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
                 }
                 else
                 {
-                    Menu menu = new Menu();
-                    menu.ShowDialog();
-                    this.Hide();
+                    if (txtContra.Text.Length <= 4)
+                    {
+                        MessageBox.Show("La contraseña debe tener mas de 4 caracteres",
+                            "Contraseña no segura",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+                    else
+                    {
+                        MenuPrincipal menu = new MenuPrincipal();
+                        menu.ShowDialog();
+                        this.Hide();
+                    }
                 }
             }
             catch (Exception ex)
@@ -58,6 +63,25 @@ namespace InmobiliariaClarita.Login
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit(); //Para salir del sistema
+        }
+
+        //Evento que se utiliza para cuando se presiona Enter en un Textbox
+        private void txtContra_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Va junto con este condicional
+            if (e.KeyCode == Keys.Enter)
+            {
+                iniciarSesion();
+            }
+        }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "Escriba el usuario")
+            {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.Black;
+            }
         }
     }
 }

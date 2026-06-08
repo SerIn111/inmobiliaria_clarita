@@ -91,6 +91,7 @@
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsuario.ForeColor = Color.Black;
             txtUsuario.Location = new Point(375, 193);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(274, 30);
@@ -99,11 +100,13 @@
             // txtContra
             // 
             txtContra.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtContra.ForeColor = Color.Black;
             txtContra.Location = new Point(375, 291);
             txtContra.Name = "txtContra";
             txtContra.PasswordChar = '*';
             txtContra.Size = new Size(274, 30);
             txtContra.TabIndex = 2;
+            txtContra.KeyDown += txtContra_KeyDown;
             // 
             // btnAceptar
             // 

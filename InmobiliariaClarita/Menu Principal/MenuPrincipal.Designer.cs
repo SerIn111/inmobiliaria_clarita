@@ -1,6 +1,6 @@
 ﻿namespace InmobiliariaClarita.Menu_Principal
 {
-    partial class Menu
+    partial class MenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             btnAtras = new Button();
             label1 = new Label();
             btnPlaza = new Button();
@@ -117,9 +117,8 @@
             btnMontania.TabIndex = 4;
             btnMontania.Text = "Casa de Montaña\r\n(Las Peñitas, SPS)";
             btnMontania.UseVisualStyleBackColor = false;
-            btnMontania.Click += button4_Click;
             // 
-            // Menu
+            // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -130,8 +129,8 @@
             Controls.Add(btnPlaza);
             Controls.Add(label1);
             Controls.Add(btnAtras);
-            Name = "Menu";
-            Text = "Menu";
+            Name = "MenuPrincipal";
+            Text = "Menu Principal";
             Load += Menu_Load;
             ResumeLayout(false);
             PerformLayout();
