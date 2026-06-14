@@ -41,7 +41,7 @@ namespace InmobiliariaClarita.Login
                 {
                     if (txtContra.Text.Length < 4)
                     {
-                        MessageBox.Show("La contraseña debe tener al menos de 4 caracteres",
+                        MessageBox.Show("La contraseña debe tener al menos 4 caracteres",
                             "Contraseña no segura",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
