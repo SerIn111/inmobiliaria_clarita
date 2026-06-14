@@ -1,5 +1,6 @@
 ﻿using InmobiliariaClarita.Menu_Principal;
 using InmobiliariaClarita.Plantillas;
+using Microsoft.Data.SqlClient;
 
 namespace InmobiliariaClarita.Login
 {
@@ -38,9 +39,9 @@ namespace InmobiliariaClarita.Login
                 }
                 else
                 {
-                    if (txtContra.Text.Length <= 4)
+                    if (txtContra.Text.Length < 4)
                     {
-                        MessageBox.Show("La contraseña debe tener mas de 4 caracteres",
+                        MessageBox.Show("La contraseña debe tener al menos de 4 caracteres",
                             "Contraseña no segura",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -48,9 +49,7 @@ namespace InmobiliariaClarita.Login
                     }
                     else
                     {
-                        MenuPrincipal menu = new MenuPrincipal();
-                        menu.ShowDialog();
-                        this.Hide();
+                        validarCredenciales();
                     }
                 }
             }
@@ -81,6 +80,67 @@ namespace InmobiliariaClarita.Login
             {
                 txtUsuario.Text = "";
                 txtUsuario.ForeColor = Color.Black;
+            }
+        }
+
+        private void validarCredenciales()
+        {
+            try
+            {
+                string queryPrueba = "select * from Credenciales where Usuario = @usuario and Contra = @contra;";
+                using (SqlConnection conectar = Conexion.ObtenerConexion())
+                {
+                    conectar.Open();
+                    SqlCommand cmdQueryPrueba = new SqlCommand(queryPrueba, conectar);
+                    cmdQueryPrueba.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                    cmdQueryPrueba.Parameters.AddWithValue("@contra", txtContra.Text);
+                    SqlDataReader readerQueryPrueba = cmdQueryPrueba.ExecuteReader();
+                    if (readerQueryPrueba.Read())
+                    {
+                        string id = readerQueryPrueba["Empleado_ID"].ToString();
+                        
+                        this.Hide();
+                        this.WindowState = FormWindowState.Minimized;
+                        this.Show();
+
+                        MenuPrincipal menu = new MenuPrincipal(id);
+
+                        DialogResult resultado = menu.ShowDialog(this);
+
+                        if (resultado != DialogResult.Cancel)
+                        {
+                            Application.Exit();
+                        }
+                        else
+                        {
+                            this.WindowState = FormWindowState.Normal;
+                            this.Activate();
+
+                            // Limpiamos los campos para mayor seguridad
+                            txtContra.Clear();
+
+                            txtUsuario.Clear();
+                            txtUsuario.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrecta. Intente de nuevo",
+                            "Credenciales invalidas",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
     }
