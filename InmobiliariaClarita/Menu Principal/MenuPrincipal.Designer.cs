@@ -35,6 +35,7 @@
             btnPlaya = new Button();
             btnApartamentos = new Button();
             btnMontania = new Button();
+            btnAgregarCliente = new Button();
             SuspendLayout();
             // 
             // btnAtras
@@ -118,11 +119,22 @@
             btnMontania.Text = "Casa de Montaña\r\n(Las Peñitas, SPS)";
             btnMontania.UseVisualStyleBackColor = false;
             // 
+            // btnAgregarCliente
+            // 
+            btnAgregarCliente.Location = new Point(78, 121);
+            btnAgregarCliente.Name = "btnAgregarCliente";
+            btnAgregarCliente.Size = new Size(94, 29);
+            btnAgregarCliente.TabIndex = 101;
+            btnAgregarCliente.Text = "btnAgregarCliente";
+            btnAgregarCliente.UseVisualStyleBackColor = true;
+            btnAgregarCliente.Click += btnAgregarCliente_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(900, 533);
+            Controls.Add(btnAgregarCliente);
             Controls.Add(btnMontania);
             Controls.Add(btnApartamentos);
             Controls.Add(btnPlaya);
@@ -144,5 +156,6 @@
         private Button btnPlaya;
         private Button btnApartamentos;
         private Button btnMontania;
+        private Button btnAgregarCliente;
     }
 }

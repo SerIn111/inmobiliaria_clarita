@@ -46,6 +46,7 @@
             tpSalir = new ToolTip(components);
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -72,7 +73,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(364, 164);
+            label2.Location = new Point(34, 66);
             label2.Name = "label2";
             label2.Size = new Size(96, 29);
             label2.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(375, 262);
+            label3.Location = new Point(34, 164);
             label3.Name = "label3";
             label3.Size = new Size(136, 29);
             label3.TabIndex = 3;
@@ -160,6 +161,8 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label3);
             panel1.Location = new Point(340, 94);
             panel1.Name = "panel1";
             panel1.Size = new Size(331, 351);
@@ -177,8 +180,6 @@
             Controls.Add(btnAceptar);
             Controls.Add(txtContra);
             Controls.Add(txtUsuario);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -187,6 +188,8 @@
             Text = "Login";
             Load += Logincs_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

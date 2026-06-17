@@ -6,6 +6,7 @@ namespace InmobiliariaClarita.Login
 {
     public partial class Logincs : Plantilla
     {
+        public static string usuarioID; //Para que esta variable pueda ser leida desde cualqueir ventana
         public Logincs()
         {
             InitializeComponent();
@@ -97,13 +98,15 @@ namespace InmobiliariaClarita.Login
                     SqlDataReader readerQueryPrueba = cmdQueryPrueba.ExecuteReader();
                     if (readerQueryPrueba.Read())
                     {
-                        string id = readerQueryPrueba["Empleado_ID"].ToString();
-                        
+                        usuarioID = readerQueryPrueba["Empleado_ID"].ToString();
+                        mostrarIntegrantes();
+
+
                         this.Hide();
                         this.WindowState = FormWindowState.Minimized;
                         this.Show();
 
-                        MenuPrincipal menu = new MenuPrincipal(id);
+                        MenuPrincipal menu = new MenuPrincipal();
 
                         DialogResult resultado = menu.ShowDialog(this);
 
@@ -138,6 +141,48 @@ namespace InmobiliariaClarita.Login
                 MessageBox.Show(
                     ex.Message,
                     "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+        private void mostrarIntegrantes()
+        {
+            //Esta funcion solo es de prueba, es para que vean cómo se usarán las consultas.
+            try
+            {
+                string queryPrueba = "select * from Empleados where Empleado_ID = @empleadoid;";
+                using (SqlConnection conectar = Conexion.ObtenerConexion())
+                {
+                    conectar.Open();
+                    SqlCommand cmdQueryPrueba = new SqlCommand(queryPrueba, conectar);
+                    cmdQueryPrueba.Parameters.AddWithValue("@empleadoid", usuarioID);
+                    SqlDataReader readerQueryPrueba = cmdQueryPrueba.ExecuteReader();
+                    if (readerQueryPrueba.Read())
+                    {
+                        string nombreCompleto = readerQueryPrueba["Nombre"].ToString();
+                        string[] nombrePartes = nombreCompleto.Split(" ");
+                        string nombre3 = "";
+
+                        for (int i = 0; i <= 2; i++)
+                        {
+                            nombre3 += nombrePartes[i];
+                            if (i < 2)
+                            {
+                                nombre3 += " ";
+                            }
+                        }
+                        //Para ver el texto en la consola
+                        System.Diagnostics.Debug.WriteLine("Hola " + nombre3);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Algo salió mal",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
