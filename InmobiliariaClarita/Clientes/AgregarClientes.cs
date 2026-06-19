@@ -155,7 +155,7 @@ namespace InmobiliariaClarita.Clientes
 
                     if (cmdAgregarClientes.ExecuteNonQuery() != 0) //Se manda a ejecutar el query y verifica si afectó filas
                     {
-                        System.Diagnostics.Debug.WriteLine("Hola " + Logincs.usuarioID);
+                        System.Diagnostics.Debug.WriteLine("Hola " + Login.Login.usuarioID);
                         MessageBox.Show(
                             "Cliente agregado con exito",
                             "Exito",
@@ -164,7 +164,7 @@ namespace InmobiliariaClarita.Clientes
                         );
                         this.Hide();
 
-                        MenuPrincipal menu = new MenuPrincipal();
+                        Menu menu = new Menu();
                         menu.ShowDialog();
                     }
                 }

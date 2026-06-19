@@ -4,10 +4,10 @@ using Microsoft.Data.SqlClient;
 
 namespace InmobiliariaClarita.Login
 {
-    public partial class Logincs : Plantilla
+    public partial class Login : Plantilla
     {
         public static string usuarioID; //Para que esta variable pueda ser leida desde cualqueir ventana
-        public Logincs()
+        public Login()
         {
             InitializeComponent();
         }
@@ -99,14 +99,14 @@ namespace InmobiliariaClarita.Login
                     if (readerQueryPrueba.Read())
                     {
                         usuarioID = readerQueryPrueba["Empleado_ID"].ToString();
-                        mostrarIntegrantes();
+                        mostrarNombre();
 
 
                         this.Hide();
                         this.WindowState = FormWindowState.Minimized;
                         this.Show();
 
-                        MenuPrincipal menu = new MenuPrincipal();
+                        Menu menu = new Menu();
 
                         DialogResult resultado = menu.ShowDialog(this);
 
@@ -120,9 +120,9 @@ namespace InmobiliariaClarita.Login
                             this.Activate();
 
                             // Limpiamos los campos para mayor seguridad
+                            txtUsuario.Clear();
                             txtContra.Clear();
 
-                            txtUsuario.Clear();
                             txtUsuario.Focus();
                         }
                     }
@@ -147,7 +147,7 @@ namespace InmobiliariaClarita.Login
             }
         }
 
-        private void mostrarIntegrantes()
+        private void mostrarNombre()
         {
             //Esta funcion solo es de prueba, es para que vean cómo se usarán las consultas.
             try

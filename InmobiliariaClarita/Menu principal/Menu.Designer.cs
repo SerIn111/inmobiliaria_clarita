@@ -1,6 +1,6 @@
 ﻿namespace InmobiliariaClarita.Menu_Principal
 {
-    partial class MenuPrincipal
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             btnAtras = new Button();
             label1 = new Label();
             btnPlaza = new Button();
@@ -36,6 +36,7 @@
             btnApartamentos = new Button();
             btnMontania = new Button();
             btnAgregarCliente = new Button();
+            btnReservaciones = new Button();
             SuspendLayout();
             // 
             // btnAtras
@@ -121,19 +122,30 @@
             // 
             // btnAgregarCliente
             // 
-            btnAgregarCliente.Location = new Point(78, 121);
+            btnAgregarCliente.Location = new Point(57, 121);
             btnAgregarCliente.Name = "btnAgregarCliente";
-            btnAgregarCliente.Size = new Size(94, 29);
+            btnAgregarCliente.Size = new Size(115, 49);
             btnAgregarCliente.TabIndex = 101;
-            btnAgregarCliente.Text = "btnAgregarCliente";
+            btnAgregarCliente.Text = "Agregar Cliente";
             btnAgregarCliente.UseVisualStyleBackColor = true;
             btnAgregarCliente.Click += btnAgregarCliente_Click;
             // 
-            // MenuPrincipal
+            // btnReservaciones
+            // 
+            btnReservaciones.Location = new Point(57, 186);
+            btnReservaciones.Name = "btnReservaciones";
+            btnReservaciones.Size = new Size(115, 49);
+            btnReservaciones.TabIndex = 102;
+            btnReservaciones.Text = "Reservaciones";
+            btnReservaciones.UseVisualStyleBackColor = true;
+            btnReservaciones.Click += btnReservaciones_Click;
+            // 
+            // Menu
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(900, 533);
+            Controls.Add(btnReservaciones);
             Controls.Add(btnAgregarCliente);
             Controls.Add(btnMontania);
             Controls.Add(btnApartamentos);
@@ -141,7 +153,7 @@
             Controls.Add(btnPlaza);
             Controls.Add(label1);
             Controls.Add(btnAtras);
-            Name = "MenuPrincipal";
+            Name = "Menu";
             Text = "Menu Principal";
             Load += Menu_Load;
             ResumeLayout(false);
@@ -157,5 +169,6 @@
         private Button btnApartamentos;
         private Button btnMontania;
         private Button btnAgregarCliente;
+        private Button btnReservaciones;
     }
 }

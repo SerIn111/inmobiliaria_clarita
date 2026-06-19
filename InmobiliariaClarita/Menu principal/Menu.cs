@@ -2,19 +2,20 @@
 using InmobiliariaClarita.Login;
 using InmobiliariaClarita.Plantillas;
 using InmobiliariaClarita.Clientes;
+using InmobiliariaClarita.Reservaciones;
 
 namespace InmobiliariaClarita.Menu_Principal
 {
-    public partial class MenuPrincipal : Plantilla
+    public partial class Menu : Plantilla
     {
-        public MenuPrincipal()
+        public Menu()
         {
             InitializeComponent();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -28,6 +29,13 @@ namespace InmobiliariaClarita.Menu_Principal
             this.Hide();
             AgregarClientes agregar = new AgregarClientes();
             agregar.ShowDialog();
+        }
+
+        private void btnReservaciones_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Reservaciones.Reservaciones reserv = new Reservaciones.Reservaciones();
+            reserv.ShowDialog();
         }
     }
 }
