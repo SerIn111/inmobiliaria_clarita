@@ -70,7 +70,7 @@
             txtContra.Name = "txtContra";
             txtContra.PasswordChar = '*';
             txtContra.Size = new Size(261, 27);
-            txtContra.TabIndex = 2;
+            txtContra.TabIndex = 0;
             txtContra.KeyDown += txtContra_KeyDown;
             // 
             // btnAceptar
@@ -83,7 +83,7 @@
             btnAceptar.Location = new Point(159, 313);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(245, 52);
-            btnAceptar.TabIndex = 3;
+            btnAceptar.TabIndex = 2;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
@@ -99,7 +99,7 @@
             btnSalir.Location = new Point(1, 373);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(126, 54);
-            btnSalir.TabIndex = 101;
+            btnSalir.TabIndex = 0;
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
@@ -114,7 +114,7 @@
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(261, 27);
-            txtUsuario.TabIndex = 1;
+            txtUsuario.TabIndex = 0;
             // 
             // label3
             // 
@@ -123,7 +123,7 @@
             label3.Location = new Point(142, 214);
             label3.Name = "label3";
             label3.Size = new Size(136, 29);
-            label3.TabIndex = 3;
+            label3.TabIndex = 100;
             label3.Text = "Contraseña";
             // 
             // label2
@@ -133,7 +133,7 @@
             label2.Location = new Point(142, 111);
             label2.Name = "label2";
             label2.Size = new Size(96, 29);
-            label2.TabIndex = 2;
+            label2.TabIndex = 101;
             label2.Text = "Usuario";
             // 
             // splitContainer1
@@ -160,7 +160,7 @@
             splitContainer1.Panel2.Controls.Add(btnAceptar);
             splitContainer1.Size = new Size(1075, 428);
             splitContainer1.SplitterDistance = 530;
-            splitContainer1.TabIndex = 102;
+            splitContainer1.TabIndex = 0;
             // 
             // label1
             // 
@@ -170,7 +170,7 @@
             label1.Location = new Point(112, 226);
             label1.Name = "label1";
             label1.Size = new Size(276, 58);
-            label1.TabIndex = 104;
+            label1.TabIndex = 103;
             label1.Text = "Soluciones inmobiliarias\r\ncon confianza.";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -181,19 +181,19 @@
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(446, 117);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 103;
+            pictureBox1.TabIndex = 104;
             pictureBox1.TabStop = false;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(245, 246, 250);
-            panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(txtContra);
+            panel2.Controls.Add(pictureBox3);
             panel2.Location = new Point(142, 247);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
             panel2.Size = new Size(321, 43);
-            panel2.TabIndex = 6;
+            panel2.TabIndex = 1;
             // 
             // pictureBox3
             // 
@@ -209,13 +209,13 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(245, 246, 250);
-            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(txtUsuario);
+            panel1.Controls.Add(pictureBox2);
             panel1.Location = new Point(142, 152);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(321, 43);
-            panel1.TabIndex = 5;
+            panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -225,7 +225,7 @@
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(44, 43);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 7;
+            pictureBox2.TabIndex = 106;
             pictureBox2.TabStop = false;
             // 
             // label4
@@ -235,7 +235,7 @@
             label4.Location = new Point(142, 25);
             label4.Name = "label4";
             label4.Size = new Size(277, 52);
-            label4.TabIndex = 4;
+            label4.TabIndex = 107;
             label4.Text = "Iniciar sesión";
             // 
             // Login
@@ -249,6 +249,7 @@
             Name = "Login";
             Text = "Login";
             Load += Logincs_Load;
+            Shown += Login_Shown;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
