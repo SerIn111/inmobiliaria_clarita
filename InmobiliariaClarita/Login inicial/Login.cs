@@ -19,6 +19,7 @@ namespace InmobiliariaClarita.Login
             tpContra.SetToolTip(txtContra, "Ingrese el la contraseña");
             tpAceptar.SetToolTip(btnAceptar, "Validar credenciales e iniciar sesion");
             tpSalir.SetToolTip(btnSalir, "Salir del sistema");
+            txtUsuario.Focus();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using InmobiliariaClarita.Login;
+﻿//Esta ventana solo es de prueba
 using InmobiliariaClarita.Menu_Principal;
 using InmobiliariaClarita.Plantillas;
 using Microsoft.Data.SqlClient;

@@ -9,7 +9,7 @@ namespace InmobiliariaClarita.Reservaciones
         public Reservaciones()
         {
             InitializeComponent();
-            cmbLugares.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbLugares.DropDownStyle = ComboBoxStyle.DropDownList; //Para darle el estilo que tiene actualmente al combobox
         }
 
         private void Casas_Load(object sender, EventArgs e)
@@ -17,12 +17,7 @@ namespace InmobiliariaClarita.Reservaciones
             cmbLugares.Items.Clear();
             consultarLugares();
             cmbLugares.SelectedIndex = -1;
-
-
-            if (cmbLugares.SelectedIndex == -1)
-            {
-                inhabilitarCampos();
-            }
+            inhabilitarCampos();
         }
 
         private void consultarLugares()
