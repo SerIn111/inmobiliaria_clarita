@@ -35,7 +35,6 @@
             tpUsuario = new ToolTip(components);
             tpContra = new ToolTip(components);
             tpAceptar = new ToolTip(components);
-            btnSalir = new Button();
             tpSalir = new ToolTip(components);
             txtUsuario = new TextBox();
             label3 = new Label();
@@ -88,21 +87,6 @@
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
             // 
-            // btnSalir
-            // 
-            btnSalir.BackColor = Color.FromArgb(210, 100, 60);
-            btnSalir.BackgroundImage = (Image)resources.GetObject("btnSalir.BackgroundImage");
-            btnSalir.BackgroundImageLayout = ImageLayout.Zoom;
-            btnSalir.FlatAppearance.MouseDownBackColor = Color.Red;
-            btnSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 192);
-            btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Location = new Point(1, 373);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(126, 54);
-            btnSalir.TabIndex = 0;
-            btnSalir.UseVisualStyleBackColor = false;
-            btnSalir.Click += btnSalir_Click;
-            // 
             // txtUsuario
             // 
             txtUsuario.BackColor = Color.FromArgb(245, 246, 250);
@@ -147,7 +131,6 @@
             splitContainer1.Panel1.BackColor = Color.FromArgb(200, 79, 36);
             splitContainer1.Panel1.Controls.Add(label1);
             splitContainer1.Panel1.Controls.Add(pictureBox1);
-            splitContainer1.Panel1.Controls.Add(btnSalir);
             // 
             // splitContainer1.Panel2
             // 
@@ -272,7 +255,6 @@
         private ToolTip tpUsuario;
         private ToolTip tpContra;
         private ToolTip tpAceptar;
-        private Button btnSalir;
         private ToolTip tpSalir;
         private TextBox txtUsuario;
         private Label label3;

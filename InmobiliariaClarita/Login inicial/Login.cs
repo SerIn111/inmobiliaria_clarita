@@ -18,7 +18,6 @@ namespace InmobiliariaClarita.Login
             tpUsuario.SetToolTip(txtUsuario, "Ingrese el usuario");
             tpContra.SetToolTip(txtContra, "Ingrese el la contraseña");
             tpAceptar.SetToolTip(btnAceptar, "Validar credenciales e iniciar sesion");
-            tpSalir.SetToolTip(btnSalir, "Salir del sistema");
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -62,6 +61,7 @@ namespace InmobiliariaClarita.Login
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            //Quitar boton
             Application.Exit(); //Para salir del sistema
         }
 
