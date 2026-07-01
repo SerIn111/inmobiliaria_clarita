@@ -18,6 +18,8 @@ namespace InmobiliariaClarita.Login
             tpUsuario.SetToolTip(txtUsuario, "Ingrese el usuario");
             tpContra.SetToolTip(txtContra, "Ingrese el la contraseña");
             tpAceptar.SetToolTip(btnAceptar, "Validar credenciales e iniciar sesion");
+
+            mostrarNombres();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -192,6 +194,27 @@ namespace InmobiliariaClarita.Login
         private void Login_Shown(object sender, EventArgs e)
         {
             txtUsuario.Focus();
+        }
+
+        private void mostrarNombres()
+        {
+            string queryMostrarNombres = "select * from Empleados";
+            using (SqlConnection conectar = Conexion.ObtenerConexion())
+            {
+                conectar.Open();
+                SqlCommand cmdMostrarNombres = new SqlCommand(queryMostrarNombres, conectar);
+                SqlDataReader readerQueryPrueba = cmdMostrarNombres.ExecuteReader();
+                while (readerQueryPrueba.Read())
+                {
+                    string nombre = readerQueryPrueba["Nombre"].ToString();
+                    MessageBox.Show(
+                        nombre,
+                        "Empleados",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
         }
     }
 }
