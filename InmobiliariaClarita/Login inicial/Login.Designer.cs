@@ -31,10 +31,10 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             txtContra = new TextBox();
-            btnAceptar = new Button();
+            btnIngresar = new Button();
             tpUsuario = new ToolTip(components);
             tpContra = new ToolTip(components);
-            tpAceptar = new ToolTip(components);
+            tpIngresar = new ToolTip(components);
             tpSalir = new ToolTip(components);
             txtUsuario = new TextBox();
             label3 = new Label();
@@ -72,20 +72,21 @@
             txtContra.TabIndex = 0;
             txtContra.KeyDown += txtContra_KeyDown;
             // 
-            // btnAceptar
+            // btnIngresar
             // 
-            btnAceptar.BackColor = Color.White;
-            btnAceptar.FlatAppearance.MouseDownBackColor = Color.Lime;
-            btnAceptar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
-            btnAceptar.FlatStyle = FlatStyle.Flat;
-            btnAceptar.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAceptar.Location = new Point(159, 313);
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(245, 52);
-            btnAceptar.TabIndex = 2;
-            btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = false;
-            btnAceptar.Click += btnAceptar_Click;
+            btnIngresar.BackColor = Color.FromArgb(230, 79, 36);
+            btnIngresar.FlatAppearance.MouseDownBackColor = Color.Lime;
+            btnIngresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIngresar.ForeColor = Color.White;
+            btnIngresar.Location = new Point(159, 313);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(245, 52);
+            btnIngresar.TabIndex = 2;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnAceptar_Click;
             // 
             // txtUsuario
             // 
@@ -140,7 +141,7 @@
             splitContainer1.Panel2.Controls.Add(label4);
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Controls.Add(label2);
-            splitContainer1.Panel2.Controls.Add(btnAceptar);
+            splitContainer1.Panel2.Controls.Add(btnIngresar);
             splitContainer1.Size = new Size(1075, 428);
             splitContainer1.SplitterDistance = 530;
             splitContainer1.TabIndex = 0;
@@ -160,9 +161,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(44, 106);
+            pictureBox1.Location = new Point(64, 93);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(446, 117);
+            pictureBox1.Size = new Size(396, 130);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 104;
             pictureBox1.TabStop = false;
@@ -251,10 +252,10 @@
 
         #endregion
         private TextBox txtContra;
-        private Button btnAceptar;
+        private Button btnIngresar;
         private ToolTip tpUsuario;
         private ToolTip tpContra;
-        private ToolTip tpAceptar;
+        private ToolTip tpIngresar;
         private ToolTip tpSalir;
         private TextBox txtUsuario;
         private Label label3;

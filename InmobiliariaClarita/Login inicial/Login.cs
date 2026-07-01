@@ -17,9 +17,9 @@ namespace InmobiliariaClarita.Login
             //Son los textos que se ven al poner el cursos encima
             tpUsuario.SetToolTip(txtUsuario, "Ingrese el usuario");
             tpContra.SetToolTip(txtContra, "Ingrese el la contraseña");
-            tpAceptar.SetToolTip(btnAceptar, "Validar credenciales e iniciar sesion");
+            tpIngresar.SetToolTip(btnIngresar, "Validar credenciales e iniciar sesion");
 
-            mostrarNombres();
+            //mostrarNombres();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
